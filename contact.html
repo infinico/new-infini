@@ -1,0 +1,49 @@
+<?php 
+    include("assets/inc/header.inc.php");
+?>
+                    <div class="block">
+                        <div id="formWrapper">
+                            <form method="post" id="form" action="contact.php" onsubmit="">
+                                <h2>Contact us if you have any question. Don't be hesitated!</h2>
+
+                                <span>Name: </span>
+                                <input type="text" id="name" name="name" maxlength="30" size="30" placeholder="Enter your name"/>
+                                <span class = "error"><?php echo $nameErr ?></span>
+
+                                <br/><br/>
+
+                                <span>Email: </span>
+                                <input type="text"id="email"name="email"size="30" placeholder="Enter your email" />
+                                <span class = "error">
+                                    <?php 
+                                        if($emailErr){
+                                            echo $emailErr;
+                                        } 
+                                        else { 
+                                            echo $emailFormatErr; 
+                                        } 
+                                    ?>
+                                </span>
+
+                                <br/><br/>
+
+                                <span>Subject: </span>
+                                <input type="text" id="subject" name="subject" maxlength="30" size="30"
+                                       placeholder="Enter the subject" /> 
+                                <span class = "error"><?php echo $subjectErr ?></span>
+
+                                <br/><br/>
+
+                                <span id="comment">Comment: </span>
+                                <textarea placeholder="Enter your comment" name="comment"></textarea> 
+                                <span class = "error"><?php echo $commentErr ?></span>
+
+                                <br/><br/>
+
+                                <input type="submit" value="Submit" id="submit" name="submit" />
+                            </form>
+                        </div>
+                    </div>
+<?php 
+    include("assets/inc/footer.inc.php");
+?>
